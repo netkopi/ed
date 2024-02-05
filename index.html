@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>	
+
+		<title>Encrypt and Decrypt data using js</title>
+		<style>
+			
+			* { margin: 0; padding: 0; box-sizing: border-box; }
+		
+			body { font-size: 1.25rem; font-family: arial, 'Helvetica', monospace; }
+
+			.form { width: 100%; height: 100vh; display: flex; justify-content: center; align-items: center; }
+
+			.form-inner { padding: 1em; border: 1px solid #000; display: flex; flex-direction: column; gap: 1em; }
+
+			input { padding: .5em; font-size: 1rem; }
+			
+			button { padding: .5em; font-size: 1rem; border: none; color: #fff; background-color: lightblue; cursor: pointer;}
+			
+			
+		</style>
+	</head>	
+
+	<body>
+		
+
+		<div class="form">
+			<div class="form-inner">	
+				<h1>Data Form</h1>
+				<input type="text" id="en" placeholder="encrypt">
+				<input type="text" id="de" placeholder="decrypt">
+
+				<div class="buttons">
+					<button onclick="encrypt()">Encrypt</button>
+					<button onclick="decrypt()">Decrypt</button>
+				</div>
+			</div>
+		</div>
+
+
+
+
+	<script>
+		
+		let encryptString;
+		let decryptString;
+		
+		function encrypt(){
+			const string = document.getElementById('en').value;
+			encryptString = window.btoa(string);
+
+			const result = document.getElementById('de').value = encryptString;
+		}
+		function decrypt(){
+			const string = document.getElementById('de').value;
+			decryptString = window.atob(string);
+
+			const result = document.getElementById('en').value = decryptString;
+		}
+	
+	</script>
+	</body>
+
+</html>
